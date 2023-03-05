@@ -1,9 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.tsx",
-  output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
+  output: { path: path.join(__dirname, "build"), filename: "index.bundle.min.js", clean: true },
   mode: process.env.NODE_ENV || "development",
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
@@ -13,11 +14,12 @@ module.exports = {
   } },
   module: {
     rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ["babel-loader"],
-      },
+      // TS Loader is enough for the project
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   exclude: /node_modules/,
+      //   use: ["babel-loader"],
+      // },
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
@@ -38,4 +40,9 @@ module.exports = {
       template: path.join(__dirname, "src", "index.html"),
     }),
   ],
+  optimization: {
+    minimizer: [new TerserPlugin({
+      extractComments: false,
+    })],
+  }
 };
