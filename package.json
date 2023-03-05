@@ -1,0 +1,42 @@
+{
+  "name": "react-personal-website",
+  "version": "1.0.0",
+  "description": "Personal website made from scracth using React and Typescript",
+  "main": "index.tsx",
+  "scripts": {
+    "webpack": "webpack",
+    "start": "webpack serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://msieteee:ATBBA2njxwqn6gzKaXYs7rFKfXnC13FA83B1@bitbucket.org/msieteee/react-personal-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/msieteee/react-personal-website#readme",
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.21.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/styled-components": "^5.1.26",
+    "babel-loader": "^9.1.2",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "path": "^0.12.7",
+    "styled-components": "^5.3.8",
+    "ts-loader": "^9.4.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.5"
+  }
+}
