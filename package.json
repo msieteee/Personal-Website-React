@@ -8,6 +8,31 @@
     "start": "webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier",
+      "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://msieteee:ATBBA2njxwqn6gzKaXYs7rFKfXnC13FA83B1@bitbucket.org/msieteee/react-personal-website.git"
@@ -24,10 +49,14 @@
     "@types/react-dom": "^18.0.11",
     "@types/styled-components": "^5.1.26",
     "babel-loader": "^9.1.2",
+    "css-enums": "^1.0.4",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "html-webpack-plugin": "^5.5.0",
     "path": "^0.12.7",
+    "prop-types": "^15.8.1",
     "styled-components": "^5.3.8",
     "terser-webpack-plugin": "^5.3.6",
     "ts-loader": "^9.4.2",
