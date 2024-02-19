@@ -5,8 +5,7 @@
   "main": "index.tsx",
   "scripts": {
     "webpack": "webpack",
-    "start": "webpack serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve"
   },
   "repository": {
     "type": "git",
@@ -36,6 +35,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "autoprefixer": "10.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^4.9.5"

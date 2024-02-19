@@ -1,25 +1,32 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
-  output: { path: path.join(__dirname, "build"), filename: "index.bundle.min.js", clean: true },
+  output: {
+    path: path.join(__dirname, "build"),
+    filename: "index.bundle.min.js",
+    clean: true,
+  },
   mode: process.env.NODE_ENV || "development",
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
-  devServer: { static: {
-    directory:     path.resolve(__dirname, "src") 
-  } },
+  devServer: {
+    open: true,
+    hot: true,
+    liveReload: true,
+    watchFiles: [`./src/**/*`],
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
+    },
+  },
   module: {
     rules: [
-      // TS Loader is enough for the project
-      // {
-      //   test: /\.(js|jsx)$/,
-      //   exclude: /node_modules/,
-      //   use: ["babel-loader"],
-      // },
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
@@ -37,12 +44,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "index.html"),
+      template: `./public/index.html`,
     }),
   ],
   optimization: {
-    minimizer: [new TerserPlugin({
-      extractComments: false,
-    })],
-  }
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
+    ],
+  },
 };
