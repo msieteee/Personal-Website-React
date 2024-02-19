@@ -1,7 +1,7 @@
 {
-  "name": "react-personal-website",
+  "name": "Miguel Sietereales",
   "version": "1.0.0",
-  "description": "Personal website made from scracth using React and Typescript",
+  "description": "Personal website made from scratch using React and Typescript",
   "main": "index.tsx",
   "scripts": {
     "webpack": "webpack",
