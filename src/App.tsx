@@ -1,8 +1,16 @@
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import AppProvider from "./context/AppProvider";
+import Homepage from "./pages/Homepage";
+
 const App = () => {
   return (
-    <h1>
-      Welcome to React App thats build using Wesbpack and Babel separately
-    </h1>
+    <Router>
+      <AppProvider>
+        <Routes>
+          <Route path="/" Component={Homepage} />
+        </Routes>
+      </AppProvider>
+    </Router>
   );
 };
 

@@ -1,10 +1,10 @@
 {
-  "name": "Miguel Sietereales",
+  "name": "react-personal-website",
   "version": "1.0.0",
   "description": "Personal website made from scratch using React and Typescript",
   "main": "index.tsx",
   "scripts": {
-    "webpack": "webpack",
+    "build": "webpack",
     "start": "webpack serve"
   },
   "eslintConfig": {
@@ -56,6 +56,8 @@
     "html-webpack-plugin": "^5.5.0",
     "path": "^0.12.7",
     "prop-types": "^15.8.1",
+    "react-router": "^6.22.1",
+    "react-router-dom": "^6.22.1",
     "styled-components": "^5.3.8",
     "terser-webpack-plugin": "^5.3.6",
     "ts-loader": "^9.4.2",
