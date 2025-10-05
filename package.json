@@ -4,9 +4,8 @@
   "description": "Personal website made from scratch using React and Typescript",
   "main": "index.tsx",
   "scripts": {
-    "build": "webpack",
-    "start": "node server.js",
-    "heroku-postbuild": "npm run build"
+    "build": "webpack --mode production",
+    "start": "node server.js"
   },
   "eslintConfig": {
     "extends": [
