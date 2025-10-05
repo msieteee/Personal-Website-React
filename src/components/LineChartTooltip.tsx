@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { WHITE } from "../common/styles";
 
 const LineTooltipWrapper = styled.div({
-  width: "120px",
+  width: "125px",
   display: "flex",
   flexDirection: "column",
   fontFamily: "Roboto",
