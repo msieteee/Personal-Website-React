@@ -5,7 +5,8 @@
   "main": "index.tsx",
   "scripts": {
     "build": "webpack",
-    "start": "webpack serve"
+    "start": "node server.js",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +44,7 @@
     "node": "22.x"
   },
   "dependencies": {
+    "express": "^5.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.22.1",
