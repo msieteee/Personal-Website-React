@@ -1,64 +1,50 @@
-import { useState } from "react";
 import styled from "styled-components";
-import { DARK_CHARCOAL, WHITE } from "../common/styles";
-import EnvironmentChart from "../components/EnvironmentChart";
-import TabNavigation from "../components/TabNavigation";
-import { EnvironmentProvider } from "../context/EnvironmentProvider";
+import "../../public/fonts/Poppins/fonts.css";
+import NavigationBar from "../components/NavigationBar";
+import About from "../sections/About";
+import Contact from "../sections/Contact";
+import Experience from "../sections/Experience";
+import Portfolio from "../sections/Portfolio";
 
 const HomePage = styled.div({
   height: "100%",
   width: "100%",
-  minHeight: "100vh",
-  background: `${DARK_CHARCOAL}`,
+
   display: "flex",
   flexDirection: "column",
-  justifyContent: "center", // horizontal center
-  alignItems: "center", // vertical center
+  justifyContent: "center",
+  alignItems: "center",
 
   fontFamily: "Roboto",
 });
 
-const Header = styled.div({
-  padding: "25px",
-  fontWeight: 600,
-  fontSize: "24px",
-});
-
 const HomeWrapper = styled.div({
-  width: "1024px",
-
-  background: WHITE,
-
-  borderRadius: "5px",
+  height: "100%",
+  width: "100%",
 
   display: "flex",
+
   flexDirection: "column",
-  justifyContent: "center", // horizontal center
-  alignItems: "center", // vertical center
+  alignItems: "center",
 });
 
 const Homepage = () => {
-  const [activeTab, setActiveTab] = useState("Temperature");
+  const navigationTabs = [
+    { label: "about", onClick: "test" },
+    { label: "experience", onClick: "test" },
+    { label: "work", onClick: "test" },
+    { label: "contact", onClick: "test" },
+  ];
 
   return (
     <HomePage>
-      <EnvironmentProvider>
-        <HomeWrapper>
-          <Header>General Mangrove Data</Header>
-          <TabNavigation
-            tabs={[
-              { label: "Temperature", value: "Temperature" },
-              { label: "Rainfall", value: "Rainfall" },
-              { label: "Salinity", value: "Salinity" },
-              { label: "Soil pH", value: "Soil pH" },
-            ]}
-            activeTab={activeTab}
-            onChange={setActiveTab}
-            fullWidth
-          />
-          <EnvironmentChart dataSource={activeTab} />
-        </HomeWrapper>
-      </EnvironmentProvider>
+      <HomeWrapper>
+        <NavigationBar tabs={navigationTabs}></NavigationBar>
+        <About />
+        <Experience />
+        <Portfolio />
+        <Contact />
+      </HomeWrapper>
     </HomePage>
   );
 };

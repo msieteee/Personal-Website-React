@@ -3,7 +3,6 @@
  * Copyright © 2025, Miguel Alphonzo Sietereales.
  */
 
-import * as CSS from "css-enums";
 import { CSSObject } from "styled-components";
 
 /**
@@ -24,5 +23,3 @@ export interface Stylable {
 }
 
 export type HexColor = `#${string}`;
-
-export default CSS;

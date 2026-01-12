@@ -5,6 +5,7 @@
   "main": "index.tsx",
   "scripts": {
     "build": "webpack --mode production",
+    "dev": "webpack serve --mode development",
     "start": "node server.js"
   },
   "eslintConfig": {
@@ -61,14 +62,18 @@
     "@types/styled-components": "^5.1.26",
     "babel-loader": "^9.1.2",
     "css-enums": "^1.0.4",
+    "css-loader": "^7.1.2",
+    "css-modules-typescript-loader": "^4.0.1",
     "d3": "^7.9.0",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "path": "^0.12.7",
     "prop-types": "^15.8.1",
+    "style-loader": "^4.0.0",
     "terser-webpack-plugin": "^5.3.6",
     "ts-loader": "^9.4.2",
     "typescript": "^5.9.3",

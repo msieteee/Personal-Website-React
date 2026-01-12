@@ -1,7 +1,7 @@
 import { ReactElement, createContext, useState } from "react";
 
 interface AppProviderProps {
-  children: ReactElement;
+  children: ReactElement[];
 }
 
 const AppContext = createContext({});
@@ -11,7 +11,7 @@ const AppProvider = ({ children }: AppProviderProps) => {
 
   return (
     <AppContext.Provider value={{ value, setValue }}>
-      {children}
+      {...children}
     </AppContext.Provider>
   );
 };
