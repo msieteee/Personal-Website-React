@@ -97,7 +97,7 @@ const JobTitle = styled.h1({
 });
 
 const CompanySpan = styled.span({
-  fontWeight: "600",
+  fontWeight: "500",
   fontSize: "16px",
 });
 
