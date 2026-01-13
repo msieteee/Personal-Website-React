@@ -28,7 +28,7 @@ export const SECTION_TEXT = {
   EXPERIENCE: {
     HEADER: "Experience",
     SUBHEADER:
-      "In the last 7 years, my focus on customer-centric development has involved addressing pain points, staying tech-savvy, fostering collaboration, and maintaining efficient systems.",
+      "In the last 6 years, my focus on customer-centric development has involved addressing pain points, staying tech-savvy, fostering collaboration, and maintaining efficient systems.",
   },
   PORTFOLIO: {
     HEADER: "Worked Works Work",

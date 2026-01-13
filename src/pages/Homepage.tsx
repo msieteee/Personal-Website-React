@@ -29,6 +29,10 @@ const HomeWrapper = styled.div({
   alignItems: "center",
 });
 
+const Main = styled.main({});
+
+const Footer = styled.footer({});
+
 const Homepage = () => {
   const navigationTabs = [
     { label: "about", href: "#about" },
@@ -46,10 +50,14 @@ const Homepage = () => {
     <HomePage>
       <HomeWrapper>
         <NavigationBar tabs={navigationTabs}></NavigationBar>
-        <About />
-        <Experience />
-        <Portfolio />
-        <Contact />
+        <Main>
+          <About />
+          <Experience />
+          <Portfolio />
+        </Main>
+        <Footer>
+          <Contact />
+        </Footer>
       </HomeWrapper>
     </HomePage>
   );

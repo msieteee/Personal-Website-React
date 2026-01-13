@@ -52,7 +52,10 @@ const About = () => {
           headerText={HEADER_TEXT}
           subHeaders={SUBHEADER_TEXT}
         ></HeaderText>
-        <HeaderImage imageUrl={AboutImage} />
+        <HeaderImage
+          imageUrl={AboutImage}
+          alt={"Miguel looking to the side on Avenue des Champs-Élysées, Paris"}
+        />
       </ContentLimiter>
     </AboutWrapper>
   );

@@ -4,6 +4,7 @@ import { hexOpacity, TAUPE } from "../common/styles";
 
 type HeaderImageProps = {
   imageUrl: string;
+  alt?: string;
 };
 
 const ImageWrapper = styled.div({
@@ -31,10 +32,10 @@ const StyledImage = styled.img({
   },
 });
 
-const HeaderImage = ({ imageUrl }: HeaderImageProps) => {
+const HeaderImage = ({ imageUrl, alt }: HeaderImageProps) => {
   return (
     <ImageWrapper>
-      <StyledImage src={`${imageUrl}`}></StyledImage>
+      <StyledImage src={`${imageUrl}`} alt={alt}></StyledImage>
     </ImageWrapper>
   );
 };
