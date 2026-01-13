@@ -37,7 +37,7 @@ module.exports = {
         use: ["style-loader", "css-loader", "css-modules-typescript-loader"],
       },
       {
-        test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
+        test: /\.(jpg|jpeg|png|gif|mp3|svg|pdf)$/,
         use: ["file-loader"],
       },
     ],

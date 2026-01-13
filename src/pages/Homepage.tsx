@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import "../../public/fonts/fonts.css";
+import Resume from "../assets/resume.pdf";
 import NavigationBar from "../components/NavigationBar";
 import About from "../sections/About";
 import Contact from "../sections/Contact";
@@ -36,7 +37,7 @@ const Homepage = () => {
     { label: "contact", href: "#contact" },
     {
       label: "download CV",
-      href: "/downloadable/resume.pdf",
+      href: Resume,
       downloadLink: "Sietereales-Miguel-Resume.pdf",
     },
   ];
