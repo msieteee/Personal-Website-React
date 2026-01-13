@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import "../../public/fonts/Poppins/fonts.css";
+import "../../public/fonts/fonts.css";
 import NavigationBar from "../components/NavigationBar";
 import About from "../sections/About";
 import Contact from "../sections/Contact";
@@ -30,10 +30,15 @@ const HomeWrapper = styled.div({
 
 const Homepage = () => {
   const navigationTabs = [
-    { label: "about", onClick: "test" },
-    { label: "experience", onClick: "test" },
-    { label: "work", onClick: "test" },
-    { label: "contact", onClick: "test" },
+    { label: "about", href: "#about" },
+    { label: "experience", href: "#experience" },
+    { label: "work", href: "#work" },
+    { label: "contact", href: "#contact" },
+    {
+      label: "download CV",
+      href: "/downloadable/resume.pdf",
+      downloadLink: "Sietereales-Miguel-Resume.pdf",
+    },
   ];
 
   return (

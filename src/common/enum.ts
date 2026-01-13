@@ -19,8 +19,8 @@ export const Breakpoint = {
 export const HEADER_TEXT = "miguel sietereales 😎";
 
 export const SUBHEADER_TEXT = [
-  "Developer for years with a knack for diverse tech projects.",
-  "I’m currently a senior software engineer for Oracle NetSuite Philippines",
+  "Developer for over 6 years with a knack for diverse tech projects.",
+  "Previously a senior software engineer at Oracle NetSuite Philippines.",
   "Beyond coding, I'm drawn to design, travel, vintage autos, sneakers, and coffee. Always seeking new tech, adventure, and great conversations.",
 ];
 
@@ -38,7 +38,7 @@ export const SECTION_TEXT = {
   CONTACT: {
     HEADER: "Contact",
     SUBHEADER:
-      "For inquiries and collaborations, feel free to shoot me an email at miguel.sietereales@gmail.com",
+      "For inquiries and collaborations, feel free to shoot me an email at ",
   },
 };
 
