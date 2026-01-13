@@ -45,6 +45,7 @@ export const SECTION_TEXT = {
 export const JOB_EXPERIENCE = [
   {
     IMAGE: Oracle,
+    ALT: "Oracle Logo",
     TITLE: "Senior Software Engineer I",
     COMPANY: "Oracle NetSuite",
     YEAR: "2024 - 2025",
@@ -60,6 +61,7 @@ export const JOB_EXPERIENCE = [
   },
   {
     IMAGE: Infor,
+    ALT: "Infor Logo",
     TITLE: "Software Engineer",
     COMPANY: "Infor PSSC Inc.",
     YEAR: "2020 - 2021",
@@ -75,6 +77,7 @@ export const JOB_EXPERIENCE = [
   },
   {
     IMAGE: BBDO,
+    ALT: "BBDO Guerrero Logo",
     TITLE: "Digital Trainee",
     COMPANY: "BBDO Guerrero",
     YEAR: "2018",
