@@ -52,6 +52,7 @@ Designed to showcase projects, experience, and technical proficiency with modern
 
 ### Project Structure
 
+```
 ├── src/
 │ ├── components/ # Reusable UI components
 │ ├── pages/ # Page-level components
@@ -63,6 +64,7 @@ Designed to showcase projects, experience, and technical proficiency with modern
 ├── server.js # Express server
 ├── package.json
 └── README.md
+```
 
 ### Install dependencies
 
