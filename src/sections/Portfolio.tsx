@@ -26,6 +26,7 @@ const WorkPortfolioWrapper = styled.div({
   gridTemplateColumns: "repeat(auto-fit, minmax(330px, 1fr))",
 
   margin: "50px auto 0 auto",
+  justifyItems: "center", // 👈 THIS is the key
 
   gap: "25px",
 
