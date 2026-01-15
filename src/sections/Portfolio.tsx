@@ -1,5 +1,11 @@
 import styled from "styled-components";
-import { Display, JustifyContent } from "../common/cssenums";
+import {
+  AlignItems,
+  Display,
+  FlexDirection,
+  JustifyContent,
+  JustifyItems,
+} from "../common/cssenums";
 import { PORTFOLIO, SECTION_TEXT } from "../common/enum";
 import { ALABASTER, STONE_GRAY } from "../common/styles";
 import { ContentLimiter } from "../components/ContentLimiter";
@@ -12,9 +18,9 @@ const PortfolioWrapper = styled.section({
   minHeight: "50vh",
   padding: "50px 25px",
 
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
+  display: Display.Flex,
+  flexDirection: FlexDirection.Column,
+  alignItems: AlignItems.Center,
 
   background: ALABASTER,
 });
@@ -26,7 +32,7 @@ const WorkPortfolioWrapper = styled.div({
   gridTemplateColumns: "repeat(auto-fit, minmax(330px, 1fr))",
 
   margin: "50px auto 0 auto",
-  justifyItems: "center", // 👈 THIS is the key
+  justifyItems: JustifyItems.Center,
 
   gap: "25px",
 

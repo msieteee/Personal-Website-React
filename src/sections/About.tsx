@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import AboutImage from "../../public/images/miguel-sietereales.jpg";
-import { FlexDirection, FlexWrap } from "../common/cssenums";
+import {
+  Display,
+  FlexDirection,
+  FlexWrap,
+  MarginTop,
+} from "../common/cssenums";
 import { HEADER_TEXT, SUBHEADER_TEXT } from "../common/enum";
 import { ContentLimiter } from "../components/ContentLimiter";
 import HeaderImage from "../components/HeaderImage";
@@ -16,7 +21,7 @@ const AboutWrapper = styled.section({
 });
 
 const LimiterStyles = {
-  display: "flex",
+  display: Display.Flex,
   flexDirection: FlexDirection.Row,
   flexWrap: FlexWrap.Wrap,
 
@@ -27,7 +32,7 @@ const LimiterStyles = {
   },
 
   "> div": {
-    marginTop: "auto",
+    marginTop: MarginTop.Auto,
   },
 
   "> div:first-child": {

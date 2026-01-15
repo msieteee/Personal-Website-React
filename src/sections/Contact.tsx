@@ -1,5 +1,12 @@
 import styled from "styled-components";
-import { Position, TextDecoration } from "../common/cssenums";
+import {
+  AlignItems,
+  Display,
+  FlexDirection,
+  Position,
+  TextAlign,
+  TextDecoration,
+} from "../common/cssenums";
 import { SECTION_TEXT } from "../common/enum";
 import { MATTE_BLACK, TAUPE, WHITE } from "../common/styles";
 import { ContentLimiter } from "../components/ContentLimiter";
@@ -10,9 +17,9 @@ const ContactWrapper = styled.section({
   width: "100%",
   padding: "50px 25px",
 
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
+  display: Display.Flex,
+  flexDirection: FlexDirection.Column,
+  alignItems: AlignItems.Center,
 
   background: WHITE,
 });
@@ -23,8 +30,8 @@ const ContactSubHeaderText = styled.h2({
   fontSize: "14px",
   lineHeight: "1.5em",
 
-  textAlign: "center",
   textWrap: "wrap",
+  textAlign: TextAlign.Center,
 
   color: MATTE_BLACK,
   margin: "20px 0 0 0",

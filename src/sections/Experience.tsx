@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import {
+  AlignItems,
+  Display,
+  FlexDirection,
+  FlexWrap,
+} from "../common/cssenums";
 import { JOB_EXPERIENCE, SECTION_TEXT } from "../common/enum";
 import { ALMOND, STONE_GRAY } from "../common/styles";
 import { ContentLimiter } from "../components/ContentLimiter";
@@ -11,9 +17,9 @@ const ExperienceWrapper = styled.section({
   minHeight: "50vh",
   padding: "50px 25px",
 
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
+  display: Display.Flex,
+  flexDirection: FlexDirection.Column,
+  alignItems: AlignItems.Center,
 
   background: ALMOND,
 });
@@ -21,9 +27,9 @@ const ExperienceWrapper = styled.section({
 const JobExperienceWrapper = styled.div({
   width: "80%",
 
-  display: "flex",
-  flexWrap: "wrap",
-  flexDirection: "column",
+  display: Display.Flex,
+  flexWrap: FlexWrap.Wrap,
+  flexDirection: FlexDirection.Column,
 
   margin: "50px auto 0 auto",
 
