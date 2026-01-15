@@ -69,14 +69,33 @@ Designed to showcase projects, experience, and technical proficiency with modern
 ### Install dependencies
 
 ```bash
-npm install
+npm install #Installs dependencies
+```
 
+### Development
+
+#### Run development server
+
+Starts the Webpack development server with hot reloading.
+
+```bash
 npm run dev
+```
 
+### Build
+
+#### Build for production
+
+Creates an optimized production build using Webpack.
+
+```bash
 npm run build
+```
 
-npm run start
+### Run Production Server
 
+Serves the production build using an Express server.
 
-
+```bash
+npm start
 ```
