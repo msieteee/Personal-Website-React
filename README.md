@@ -1,29 +1,80 @@
-# README #
+# React Personal Website
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Personal website built from scratch using **React**, **TypeScript**, and a **custom Webpack setup**.  
+Designed to showcase projects, experience, and technical proficiency with modern frontend tooling.
 
-### What is this repository for? ###
+🌐 **Live site:** https://www.miguelsietereales.com
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+---
 
-### How do I get set up? ###
+## ✨ Features
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+- ⚛️ React 18 with TypeScript
+- 🧭 Client-side routing via React Router
+- 💅 Styled-components for component-level styling
+- 🛠 Custom Webpack 5 configuration (no CRA/Vite)
+- 🔥 Development server with hot reload
+- 🧹 ESLint + Prettier for code quality and consistency
+- 🚀 Express server for production hosting
 
-### Contribution guidelines ###
+---
 
-* Writing tests
-* Code review
-* Other guidelines
+## 🧱 Tech Stack
 
-### Who do I talk to? ###
+### Frontend
 
-* Repo owner or admin
-* Other community or team contact
+- React 18
+- TypeScript
+- React Router
+- Styled-components
+
+### Tooling
+
+- Webpack 5
+- Babel
+- ESLint + Prettier
+
+### Backend / Server
+
+- Node.js (18.x)
+- Express 4
+
+---
+
+## 📦 Requirements
+
+- **Node.js:** 18.x
+- **npm** or **yarn**
+
+---
+
+## 🚀 Getting Started
+
+### Project Structure
+
+├── src/
+│ ├── components/ # Reusable UI components
+│ ├── pages/ # Page-level components
+│ ├── routes/ # Route definitions
+│ ├── styles/ # Global and shared styles
+│ └── index.tsx # Application entry point
+├── public/ # Static assets
+├── webpack.config.js # Webpack configuration
+├── server.js # Express server
+├── package.json
+└── README.md
+
+### Install dependencies
+
+```bash
+npm install
+
+npm run dev
+
+npm run build
+
+npm run start
+
+
+
+```
