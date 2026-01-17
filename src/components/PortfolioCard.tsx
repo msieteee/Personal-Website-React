@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LinkIcon from "../../public/svg/link";
+import LinkIcon from "../assets/svg/link";
 import {
   AlignContent,
   BackgroundPosition,

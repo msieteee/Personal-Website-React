@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import "../../public/fonts/fonts.css";
+import "../assets/fonts/fonts.css";
 import Resume from "../assets/resume.pdf";
 import NavigationBar from "../components/NavigationBar";
 import About from "../sections/About";

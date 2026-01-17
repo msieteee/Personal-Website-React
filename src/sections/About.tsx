@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import AboutImage from "../../public/images/miguel-sietereales.jpg";
+import AboutImage from "../assets/images/miguel-sietereales.jpg";
 import {
   Display,
   FlexDirection,

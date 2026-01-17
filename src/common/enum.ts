@@ -1,14 +1,14 @@
-import BBDO from "../../public/images/bbdo.png";
-import Infor from "../../public/images/infor.png";
-import Oracle from "../../public/images/oracle-netsuite.png";
+import BBDO from "../assets/images/bbdo.png";
+import Infor from "../assets/images/infor.png";
+import Oracle from "../assets/images/oracle-netsuite.png";
 
-import AGPCI from "../../public/images/portfolio/agpci.jpg";
-import Crabtech from "../../public/images/portfolio/crabtech.jpg";
-import GreenGuide from "../../public/images/portfolio/greenguide.jpg";
-import LSCS from "../../public/images/portfolio/lscs.jpg";
-import Playstreet from "../../public/images/portfolio/playstreet.jpg";
-import Snickers from "../../public/images/portfolio/snickers.jpg";
-import ViaHere from "../../public/images/portfolio/viahere.jpg";
+import AGPCI from "../assets/images/portfolio/agpci.jpg";
+import Crabtech from "../assets/images/portfolio/crabtech.jpg";
+import GreenGuide from "../assets/images/portfolio/greenguide.jpg";
+import LSCS from "../assets/images/portfolio/lscs.jpg";
+import Playstreet from "../assets/images/portfolio/playstreet.jpg";
+import Snickers from "../assets/images/portfolio/snickers.jpg";
+import ViaHere from "../assets/images/portfolio/viahere.jpg";
 
 export const Breakpoint = {
   mobile: "(max-width: 375px)",
