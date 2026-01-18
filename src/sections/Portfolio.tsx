@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import {
   AlignItems,
@@ -6,11 +7,12 @@ import {
   JustifyContent,
   JustifyItems,
 } from "../common/cssenums";
-import { PORTFOLIO, SECTION_TEXT } from "../common/enum";
+import { SECTION_TEXT } from "../common/enum";
 import { ALABASTER, STONE_GRAY } from "../common/styles";
 import { ContentLimiter } from "../components/ContentLimiter";
 import PortfolioCard from "../components/PortfolioCard";
 import SectionHeader from "../components/SectionHeader";
+import { HomeContext } from "../context/HomeContext";
 
 const PortfolioWrapper = styled.section({
   height: "100%",
@@ -42,6 +44,8 @@ const WorkPortfolioWrapper = styled.div({
 });
 
 const Portfolio = () => {
+  const { portfolioData } = useContext(HomeContext);
+
   return (
     <PortfolioWrapper id="work">
       <ContentLimiter>
@@ -52,15 +56,15 @@ const Portfolio = () => {
         />
       </ContentLimiter>
       <WorkPortfolioWrapper>
-        {PORTFOLIO.map((project) => {
+        {portfolioData.map((project) => {
           return (
             <PortfolioCard
-              key={project.NAME}
-              title={project.NAME}
+              key={project.name}
+              title={project.name}
               accentColor={STONE_GRAY}
-              imageUrl={project.IMAGE}
-              description={project.DESCRIPTION}
-              href={project.URL}
+              imageUrl={project.image}
+              description={project.description}
+              href={project.url}
             />
           );
         })}

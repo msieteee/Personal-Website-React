@@ -2,14 +2,6 @@ import BBDO from "../assets/images/bbdo.png";
 import Infor from "../assets/images/infor.png";
 import Oracle from "../assets/images/oracle-netsuite.png";
 
-import AGPCI from "../assets/images/portfolio/agpci.jpg";
-import Crabtech from "../assets/images/portfolio/crabtech.jpg";
-import GreenGuide from "../assets/images/portfolio/greenguide.jpg";
-import LSCS from "../assets/images/portfolio/lscs.jpg";
-import Playstreet from "../assets/images/portfolio/playstreet.jpg";
-import Snickers from "../assets/images/portfolio/snickers.jpg";
-import ViaHere from "../assets/images/portfolio/viahere.jpg";
-
 export const Breakpoint = {
   mobile: "(max-width: 375px)",
   tablet: "(max-width: 768px)",
@@ -83,50 +75,5 @@ export const JOB_EXPERIENCE = [
     YEAR: "2018",
     DESCRIPTION:
       "Delivered user-focused website UI/UX, transforming wireframes into responsive, high-performance designs, and was named Top 7 Adobo Creative Rankings – Digital Producer in 2019.",
-  },
-];
-
-export const PORTFOLIO = [
-  {
-    NAME: "Snickers | The Hungry Artist",
-    IMAGE: Snickers,
-    URL: "https://dribbble.com/shots/14894384-Snickers-The-Hungry-Artist",
-    DESCRIPTION: "March 2018",
-  },
-  {
-    NAME: "Johnson's | Playstreet",
-    IMAGE: Playstreet,
-    URL: "https://dribbble.com/shots/14894379-Johnson-s-Baby-Playstreet",
-    DESCRIPTION: "January 2018 - March 2018",
-  },
-  {
-    NAME: "De La Salle University | CrabTECH",
-    IMAGE: Crabtech,
-    URL: "https://dribbble.com/shots/14894370-DLSU-Manila-CrabTech",
-    DESCRIPTION: "June 2019 - September 2019",
-  },
-  {
-    NAME: "De La Salle University | AGPCI",
-    IMAGE: AGPCI,
-    URL: "",
-    DESCRIPTION: "November 2017 - May 2018",
-  },
-  {
-    NAME: "De La Salle University | Green Guide",
-    IMAGE: GreenGuide,
-    URL: "https://dribbble.com/shots/14894373-DLSU-Manila-Green-Guide",
-    DESCRIPTION: "May 2016 - August 2016",
-  },
-  {
-    NAME: "La Salle Computer Society (LSCS)",
-    IMAGE: LSCS,
-    URL: "https://dribbble.com/shots/14896106-DLSU-La-Salle-Computer-Society",
-    DESCRIPTION: "February 2016 - March 2016",
-  },
-  {
-    NAME: "Takot Tahak | ViaHere",
-    IMAGE: ViaHere,
-    URL: "https://dribbble.com/shots/14894381-ViaHere-Mt-Romelo",
-    DESCRIPTION: "January 2016 - February 2016",
   },
 ];
