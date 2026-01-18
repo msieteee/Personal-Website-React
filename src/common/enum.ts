@@ -86,47 +86,13 @@ export const JOB_EXPERIENCE = [
   },
 ];
 
-export const PORTFOLIO = [
-  {
-    NAME: "Snickers | The Hungry Artist",
-    IMAGE: Snickers,
-    URL: "https://dribbble.com/shots/14894384-Snickers-The-Hungry-Artist",
-    DESCRIPTION: "March 2018",
-  },
-  {
-    NAME: "Johnson's | Playstreet",
-    IMAGE: Playstreet,
-    URL: "https://dribbble.com/shots/14894379-Johnson-s-Baby-Playstreet",
-    DESCRIPTION: "January 2018 - March 2018",
-  },
-  {
-    NAME: "De La Salle University | CrabTECH",
-    IMAGE: Crabtech,
-    URL: "https://dribbble.com/shots/14894370-DLSU-Manila-CrabTech",
-    DESCRIPTION: "June 2019 - September 2019",
-  },
-  {
-    NAME: "De La Salle University | AGPCI",
-    IMAGE: AGPCI,
-    URL: "",
-    DESCRIPTION: "November 2017 - May 2018",
-  },
-  {
-    NAME: "De La Salle University | Green Guide",
-    IMAGE: GreenGuide,
-    URL: "https://dribbble.com/shots/14894373-DLSU-Manila-Green-Guide",
-    DESCRIPTION: "May 2016 - August 2016",
-  },
-  {
-    NAME: "La Salle Computer Society (LSCS)",
-    IMAGE: LSCS,
-    URL: "https://dribbble.com/shots/14896106-DLSU-La-Salle-Computer-Society",
-    DESCRIPTION: "February 2016 - March 2016",
-  },
-  {
-    NAME: "Takot Tahak | ViaHere",
-    IMAGE: ViaHere,
-    URL: "https://dribbble.com/shots/14894381-ViaHere-Mt-Romelo",
-    DESCRIPTION: "January 2016 - February 2016",
-  },
+/** Force Import Images */
+export const IMAGES = [
+  AGPCI,
+  GreenGuide,
+  Crabtech,
+  LSCS,
+  ViaHere,
+  Playstreet,
+  Snickers,
 ];
