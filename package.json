@@ -33,10 +33,6 @@
       }
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://msieteee:ATBBA2njxwqn6gzKaXYs7rFKfXnC13FA83B1@bitbucket.org/msieteee/react-personal-website.git"
-  },
   "author": "",
   "license": "ISC",
   "homepage": "https://www.miguelsietereales.com",
