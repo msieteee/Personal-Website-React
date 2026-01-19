@@ -33,6 +33,9 @@ Designed to showcase projects, experience, and technical proficiency with modern
 - Webpack 5
 - Babel
 - ESLint + Prettier
+- GraphQL
+- Firebase
+- Flamelink CMS
 
 ### Backend / Server
 
@@ -61,7 +64,7 @@ Designed to showcase projects, experience, and technical proficiency with modern
 │ └── index.tsx # Application entry point
 ├── public/ # Static assets
 ├── webpack.config.js # Webpack configuration
-├── server.js # Express server
+├── server/ # Express Server / GraphQL Schema
 ├── package.json
 └── README.md
 ```
