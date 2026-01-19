@@ -6,26 +6,25 @@ import {
   GraphQLSchema,
   GraphQLString,
 } from "graphql";
-import GraphQLJSON from "graphql-type-json";
+import { GraphQLJSON } from "graphql-type-json"; // check if this should be { GraphQLJSON }
 import { db } from "./firebase.js";
 
 const FirebaseDataType = new GraphQLObjectType({
   name: "WebsiteData",
-  fields: {
+  fields: () => ({
     id: { type: new GraphQLNonNull(GraphQLString) },
-    data: { type: GraphQLJSON },
-  },
+    data: { type: GraphQLJSON }, // <- make sure GraphQLJSON is defined
+  }),
 });
 
 const RootQuery = new GraphQLObjectType({
   name: "RootQuery",
-  fields: {
+  fields: () => ({
     entriesBySchema: {
       type: new GraphQLList(FirebaseDataType),
       args: { schemaName: { type: new GraphQLNonNull(GraphQLString) } },
       resolve: async (_parent, args) => {
         const { schemaName } = args;
-
         const ref = collection(db, "fl_content");
         const q = query(ref, where("_fl_meta_.schema", "==", schemaName));
         const snapshot = await getDocs(q);
@@ -36,7 +35,7 @@ const RootQuery = new GraphQLObjectType({
         }));
       },
     },
-  },
+  }),
 });
 
 export const schema = new GraphQLSchema({ query: RootQuery });

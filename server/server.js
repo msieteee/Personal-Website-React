@@ -1,10 +1,8 @@
 import express from "express";
+import { graphqlHTTP } from "express-graphql";
 import path from "path";
 import { fileURLToPath } from "url";
-
-import dotenv from "dotenv";
-
-dotenv.config({ path: path.resolve("config/.env") });
+import { schema } from "./schema.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// app.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
+app.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
 
 // Serve static files
 app.use(express.static(path.join(__dirname, "..", "build")));
