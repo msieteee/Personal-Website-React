@@ -13,6 +13,27 @@ export const HomeProvider = ({ children }: { children: ReactNode }) => {
       setPortfolioData(sortEntriesByDate(data, "dateStarted"));
     };
 
+    // const fetchData = async () => {
+    //   const query = `
+    //     query ($schemaName: String!) {
+    //       entriesBySchema(schemaName: $schemaName) {
+    //         id
+    //         data
+    //       }
+    //     }
+    //   `;
+
+    //   const variables = { schemaName: FLAMELINK_SCHEMA.PORTFOLIO };
+
+    //   const response = await fetch("/graphql", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({ query, variables }),
+    //   });
+
+    //   const result = await response.json();
+    // };
+
     fetchPortfolio();
   }, []);
 

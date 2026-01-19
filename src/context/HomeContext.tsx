@@ -9,7 +9,6 @@ export type PortfolioDataType = {
 };
 
 export type HomeContextType = {
-  test?: string;
   portfolioData?: PortfolioDataType[];
 };
 

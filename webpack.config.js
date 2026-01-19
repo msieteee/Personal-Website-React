@@ -1,16 +1,16 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const dotenv = require("dotenv");
-const webpack = require("webpack");
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import dotenv from "dotenv";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import path from "path";
+import TerserPlugin from "terser-webpack-plugin";
+import webpack from "webpack";
 
 dotenv.config();
 
-module.exports = {
+export default {
   entry: "./src/index.tsx",
   output: {
-    path: path.join(__dirname, "build"),
+    path: path.resolve("build"),
     filename: "index.bundle.min.js",
     clean: true,
   },
@@ -43,11 +43,9 @@ module.exports = {
       },
       {
         test: /\.(jpg|jpeg|png|gif|mp3|svg|pdf)$/,
-        use: {
-          loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-          },
+        type: "asset/resource",
+        generator: {
+          filename: "[name][ext]",
         },
       },
     ],
