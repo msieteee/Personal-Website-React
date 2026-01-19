@@ -16,6 +16,11 @@ Designed to showcase projects, experience, and technical proficiency with modern
 - 🔥 Development server with hot reload
 - 🧹 ESLint + Prettier for code quality and consistency
 - 🚀 Express server for production hosting
+  
+## Future Plans
+
+- Move all data (Portfolio and Experience) to Firebase
+- Add a blog feature
 
 ---
 
