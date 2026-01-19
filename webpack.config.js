@@ -1,11 +1,8 @@
 import CopyWebpackPlugin from "copy-webpack-plugin";
-import dotenv from "dotenv";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from "path";
 import TerserPlugin from "terser-webpack-plugin";
 import webpack from "webpack";
-
-dotenv.config({ path: path.resolve("config/.env") });
 
 export default {
   entry: "./src/index.tsx",
@@ -67,14 +64,10 @@ export default {
     }),
     new webpack.DefinePlugin({
       "process.env": JSON.stringify({
-        NODE_ENV: process.env.NODE_ENV || "development",
         GRAPHQL_URL:
-          process.env.NODE_ENV !== "development"
+          `${process.env.NODE_ENV}` === "development"
             ? "http://localhost:3000/graphql"
             : "/graphql",
-        FIREBASE_API_KEY: process.env.API_KEY,
-        FIREBASE_AUTH_DOMAIN: process.env.AUTH_DOMAIN,
-        FIREBASE_PROJECT_ID: process.env.PROJECT_ID,
       }),
     }),
   ],
