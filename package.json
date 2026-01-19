@@ -4,7 +4,7 @@
   "description": "Personal website made from scratch using React and Typescript",
   "main": "index.tsx",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server/server.js",
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development"
   },
@@ -64,6 +64,7 @@
     "css-enums": "^1.0.4",
     "css-loader": "^7.1.2",
     "css-modules-typescript-loader": "^4.0.1",
+    "dotenv": "^17.2.3",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",

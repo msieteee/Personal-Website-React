@@ -2,6 +2,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const dotenv = require("dotenv");
+const webpack = require("webpack");
+
+dotenv.config();
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -62,6 +66,13 @@ module.exports = {
           },
         },
       ],
+    }),
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify({
+        FIREBASE_API_KEY: process.env.API_KEY,
+        FIREBASE_AUTH_DOMAIN: process.env.AUTH_DOMAIN,
+        FIREBASE_PROJECT_ID: process.env.PROJECT_ID,
+      }),
     }),
   ],
   optimization: {
