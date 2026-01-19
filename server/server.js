@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import { graphqlHTTP } from "express-graphql";
 import path from "path";
@@ -9,6 +10,8 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(cors());
 
 // Force HTTPS in production
 if (process.env.NODE_ENV === "production") {

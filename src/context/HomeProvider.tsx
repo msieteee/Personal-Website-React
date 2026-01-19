@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useMemo, useState } from "react";
 import { sortEntriesByDate, transformPortfolioData } from "../common/common";
-import { FLAMELINK_SCHEMA, getEntriesBySchema } from "../lib/flamelink";
+import { FLAMELINK_SCHEMA } from "../lib/flamelink";
 import { HomeContext } from "./HomeContext";
 
 export const HomeProvider = ({ children }: { children: ReactNode }) => {
@@ -8,12 +8,6 @@ export const HomeProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const fetchPortfolio = async () => {
-      const data = await getEntriesBySchema(FLAMELINK_SCHEMA.PORTFOLIO);
-
-      setPortfolioData(sortEntriesByDate(data, "dateStarted"));
-    };
-
-    const fetchData = async () => {
       const query = `
         query ($schemaName: String!) {
           entriesBySchema(schemaName: $schemaName) {
@@ -23,10 +17,9 @@ export const HomeProvider = ({ children }: { children: ReactNode }) => {
         }
       `;
 
-      console.log("rx");
-
       const variables = { schemaName: FLAMELINK_SCHEMA.PORTFOLIO };
 
+      /** Use localhost for dev server */
       const response = await fetch("/graphql", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -34,10 +27,17 @@ export const HomeProvider = ({ children }: { children: ReactNode }) => {
       });
 
       const result = await response.json();
-      console.log(result);
-    };
+      const flattenResult = Object.values(result.data.entriesBySchema).map(
+        (d: any) => {
+          return {
+            id: d.id,
+            ...d.data,
+          };
+        },
+      );
 
-    fetchData();
+      setPortfolioData(sortEntriesByDate(flattenResult, "dateStarted"));
+    };
 
     fetchPortfolio();
   }, []);
