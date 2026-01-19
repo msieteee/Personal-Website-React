@@ -6,14 +6,14 @@ import {
   GraphQLSchema,
   GraphQLString,
 } from "graphql";
-import { GraphQLJSON } from "graphql-type-json"; // check if this should be { GraphQLJSON }
+import { GraphQLJSON } from "graphql-type-json";
 import { db } from "./firebase.js";
 
 const FirebaseDataType = new GraphQLObjectType({
   name: "WebsiteData",
   fields: () => ({
     id: { type: new GraphQLNonNull(GraphQLString) },
-    data: { type: GraphQLJSON }, // <- make sure GraphQLJSON is defined
+    data: { type: GraphQLJSON },
   }),
 });
 
