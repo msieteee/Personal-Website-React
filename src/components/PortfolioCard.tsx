@@ -49,7 +49,7 @@ const PortfolioCardContainer = styled.div(
       display: Display.Flex,
       flexDirection: FlexDirection.Column,
     };
-  }
+  },
 );
 
 type PortfolioImageProps = {
@@ -77,7 +77,7 @@ const PortfolioImage = styled.div(({ imageUrl }: PortfolioImageProps) => {
       background: "#fff",
       borderTopRightRadius: "80px",
 
-      boxShadow: `inset 0px 2px 3px 0px ${hexOpacity(MATTE_BLACK, 10)}`,
+      boxShadow: `inset 0px 2px 2px 0px ${hexOpacity(MATTE_BLACK, 10)}`,
     },
   };
 });

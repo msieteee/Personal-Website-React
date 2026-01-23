@@ -1,9 +1,7 @@
-import { useContext } from "react";
 import styled from "styled-components";
 import "../assets/fonts/fonts.css";
 import Resume from "../assets/resume.pdf";
 import NavigationBar from "../components/NavigationBar";
-import { HomeContext } from "../context/HomeContext";
 import About from "../sections/About";
 import Contact from "../sections/Contact";
 import Experience from "../sections/Experience";
@@ -31,15 +29,14 @@ const HomeWrapper = styled.div({
   alignItems: "center",
 });
 
-const Main = styled.main({});
+const Main = styled.main({
+  height: "100%",
+  width: "100%",
+});
 
 const Footer = styled.footer({});
 
 const Homepage = () => {
-  const { portfolioData } = useContext(HomeContext);
-
-  console.log(portfolioData);
-
   const navigationTabs = [
     { label: "about", href: "#about" },
     { label: "experience", href: "#experience" },

@@ -16,6 +16,11 @@ export const Breakpoint = {
   desktop: "(min-width: 1200px)",
 };
 
+export const FLAMELINK_SCHEMA = {
+  EXPERIENCE: "experience",
+  PORTFOLIO: "projectPortfolio",
+};
+
 export const HEADER_TEXT = "miguel sietereales 😎";
 
 export const SUBHEADER_TEXT = [

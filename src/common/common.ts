@@ -42,3 +42,13 @@ export const transformPortfolioData = (portfolioData) => {
     };
   });
 };
+
+export const fetchGraphql = async (query, variables) => {
+  const response = await fetch(`${process.env.GRAPHQL_URL}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query, variables }),
+  });
+
+  return response.json();
+};

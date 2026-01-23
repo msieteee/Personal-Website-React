@@ -4,6 +4,7 @@ import {
   Display,
   FlexDirection,
   FlexWrap,
+  Margin,
   MarginTop,
 } from "../common/cssenums";
 import { HEADER_TEXT, SUBHEADER_TEXT } from "../common/enum";
@@ -18,6 +19,9 @@ const AboutWrapper = styled.section({
   maxWidth: "1440px",
 
   padding: "50px 50px 100px",
+
+  marginLeft: Margin.Auto,
+  marginRight: Margin.Auto,
 });
 
 const LimiterStyles = {

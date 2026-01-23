@@ -29,6 +29,7 @@ const PortfolioWrapper = styled.section({
 
 const WorkPortfolioWrapper = styled.div({
   width: "80%",
+  maxWidth: "1440px",
 
   display: Display.Grid,
   gridTemplateColumns: "repeat(auto-fit, minmax(330px, 1fr))",
