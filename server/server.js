@@ -11,7 +11,20 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+const ORIGIN_LINK = "https://www.miguelsietereales.com";
+
+const corsOptions =
+  process.env.NODE_ENV === "production"
+    ? {
+        origin: ORIGIN_LINK,
+        methods: ["POST"],
+        allowedHeaders: ["Content-Type", "X-Requested-With"],
+      }
+    : {
+        origin: true,
+      };
+
+app.use(cors(corsOptions));
 
 // Force HTTPS in production
 if (process.env.NODE_ENV === "production") {
@@ -24,17 +37,31 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use("/graphql", (req, res, next) => {
-  const origin = req.headers.origin;
+  if (process.env.NODE_ENV === "production") {
+    if (req.method !== "POST") {
+      return res.sendStatus(405);
+    }
 
-  console.log(origin);
+    if (!req.is("application/json")) {
+      return res.sendStatus(415);
+    }
 
-  // if (!origin || origin !== ALLOWED_ORIGIN) {
-  //   return res.status(403).json({ error: "Forbidden" });
-  // }
+    const origin = req.headers.origin;
+    if (origin && origin !== ORIGIN_LINK) {
+      return res.sendStatus(403);
+    }
+
+    if (!req.headers["x-requested-with"]) {
+      return res.sendStatus(403);
+    }
+  }
 
   next();
 });
-app.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
+app.use(
+  "/graphql",
+  graphqlHTTP({ schema, graphiql: process.env.NODE_ENV !== "production" }),
+);
 
 // Serve static files
 app.use(express.static(path.join(__dirname, "..", "build")));
