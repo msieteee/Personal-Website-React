@@ -23,6 +23,17 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+app.use("/graphql", (req, res, next) => {
+  const origin = req.headers.origin;
+
+  console.log(origin);
+
+  // if (!origin || origin !== ALLOWED_ORIGIN) {
+  //   return res.status(403).json({ error: "Forbidden" });
+  // }
+
+  next();
+});
 app.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
 
 // Serve static files
