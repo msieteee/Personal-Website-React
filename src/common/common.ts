@@ -44,9 +44,12 @@ export const transformPortfolioData = (portfolioData) => {
 };
 
 export const fetchGraphql = async (query, variables) => {
-  const response = await fetch(`${process.env.GRAPHQL_URL}`, {
+  const response = await fetch(process.env.GRAPHQL_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      "X-Internal-Request": "true",
+    },
     body: JSON.stringify({ query, variables }),
   });
 

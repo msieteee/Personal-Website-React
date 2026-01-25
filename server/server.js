@@ -51,7 +51,7 @@ app.use("/graphql", (req, res, next) => {
       return res.sendStatus(403);
     }
 
-    if (!req.headers["x-requested-with"]) {
+    if (!req.headers["x-internal-request"]) {
       return res.sendStatus(403);
     }
   }
