@@ -1,0 +1,16 @@
+# Node modules (install fresh in container)
+node_modules
+
+# Local build files
+build
+
+# VSCode config
+.vscode
+
+# Git
+.git
+.gitignore
+
+# Logs
+npm-debug.log
+yarn-error.log
