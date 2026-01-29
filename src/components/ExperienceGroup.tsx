@@ -147,7 +147,7 @@ const ExperienceGroup = ({
     <ExperienceGroupContainer>
       <ExperienceDetailsWrapper>
         {hasImage ? (
-          <StyledImage src={imageUrl} />
+          <StyledImage loading="lazy" src={imageUrl} />
         ) : (
           <>
             <ImagePlaceholder />

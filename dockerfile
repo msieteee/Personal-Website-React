@@ -1,5 +1,8 @@
 FROM node:18-alpine AS builder
 
+ARG NODE_ENV=development
+ENV NODE_ENV=${NODE_ENV}
+
 WORKDIR /app
 
 COPY package*.json ./
@@ -19,7 +22,7 @@ COPY --from=builder /app/build ./build
 COPY --from=builder /app/config ./config
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --omit=dev
 
 EXPOSE 8080
 
