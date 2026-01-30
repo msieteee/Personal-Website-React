@@ -9,8 +9,6 @@ jobs:
   # 1️⃣ Build & push Docker image
   build-and-push:
     runs-on: ubuntu-latest
-    outputs:
-      image: asia-southeast1-docker.pkg.dev/alien-craft-484704-u4/personal-react-website/personal-react-website:latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -32,7 +30,7 @@ jobs:
           context: .
           file: ./dockerfile
           push: true
-          tags: ${{ jobs.build-and-push.outputs.image }}
+          tags: asia-southeast1-docker.pkg.dev/alien-craft-484704-u4/personal-react-website/personal-react-website:latest
           build-args: |
             NODE_ENV=production
 
