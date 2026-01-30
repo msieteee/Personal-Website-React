@@ -22,7 +22,7 @@ COPY --from=builder /app/build ./build
 COPY --from=builder /app/config ./config
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --production
 
 EXPOSE 8080
 
