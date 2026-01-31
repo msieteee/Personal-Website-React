@@ -17,7 +17,7 @@ const HeaderWrapper = styled.div(({ styles }: HeaderWrapperProps) => {
   };
 });
 
-const HeaderLabel = styled.div({
+const HeaderLabel = styled.h1({
   fontFamily: "Poppins",
   fontWeight: "700",
   fontSize: "20px",
@@ -39,6 +39,8 @@ const SubHeaderLabel = styled.h2({
   overflowWrap: "break-word",
 });
 
+const HeaderEmoji = styled.span({});
+
 const HeaderText = ({ headerText, subHeaders }: HeaderTextProps) => {
   const SubHeaders = subHeaders ? (
     subHeaders.map((subHeader, index) => {
@@ -50,7 +52,10 @@ const HeaderText = ({ headerText, subHeaders }: HeaderTextProps) => {
 
   return (
     <HeaderWrapper>
-      <HeaderLabel>{headerText}</HeaderLabel>
+      <HeaderLabel>
+        {headerText}
+        <HeaderEmoji aria-hidden="true"> 😎 </HeaderEmoji>
+      </HeaderLabel>
       <SubHeaderLabelWrapper>{SubHeaders}</SubHeaderLabelWrapper>
     </HeaderWrapper>
   );

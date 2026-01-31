@@ -21,7 +21,7 @@ export const FLAMELINK_SCHEMA = {
   PORTFOLIO: "projectPortfolio",
 };
 
-export const HEADER_TEXT = "miguel sietereales 😎";
+export const HEADER_TEXT = "miguel sietereales";
 
 export const SUBHEADER_TEXT = [
   "Developer for over 6 years with a knack for diverse tech projects.",
