@@ -36,6 +36,9 @@ jobs:
           tags: asia-southeast1-docker.pkg.dev/alien-craft-484704-u4/personal-react-website/personal-react-website:latest
           build-args: |
             NODE_ENV=production
+            FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+            FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+            FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
 
   # 2️⃣ Deploy to Cloud Run
   deploy:

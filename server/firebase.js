@@ -1,11 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { env } from "../config/config.js";
+
+if (process.env.NODE_ENV !== "production") {
+  await import("dotenv").then((dotenv) => dotenv.config());
+}
 
 const firebaseConfig = {
-  apiKey: `${env.FIREBASE_API_KEY}`,
-  authDomain: `${env.FIREBASE_AUTH_DOMAIN}`,
-  projectId: `${env.FIREBASE_PROJECT_ID}`,
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
 };
 
 export const firebaseApp = initializeApp(firebaseConfig);

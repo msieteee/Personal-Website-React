@@ -9,7 +9,7 @@ RUN npm install
 COPY . .
 
 ARG NODE_ENV=development
-ENV NODE_ENV=${NODE_ENV}
+ENV NODE_ENV=$NODE_ENV
 
 RUN npm run build
 
@@ -17,6 +17,7 @@ FROM node:18-alpine
 
 WORKDIR /app
 
+COPY --from=builder /app/server.js ./server.js
 COPY --from=builder /app/server ./server
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/config ./config
@@ -26,4 +27,4 @@ RUN npm install --production
 
 EXPOSE 8080
 
-CMD ["node", "server/server.js"]
+CMD ["node", "server.js"]

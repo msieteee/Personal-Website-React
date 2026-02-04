@@ -20,4 +20,7 @@ build/
 *.mov
 *.wmv
 
+# Environment File
+.env
+
 

@@ -3,7 +3,11 @@ import express from "express";
 import { graphqlHTTP } from "express-graphql";
 import path from "path";
 import { fileURLToPath } from "url";
-import { schema } from "./schema.js";
+import { schema } from "./server/schema.js";
+
+if (process.env.NODE_ENV !== "production") {
+  import("dotenv").then((dotenv) => dotenv.config());
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -59,17 +63,18 @@ app.use("/graphql", (req, res, next) => {
 
   next();
 });
+
 app.use(
   "/graphql",
   graphqlHTTP({ schema, graphiql: process.env.NODE_ENV !== "production" }),
 );
 
 // Serve static files
-app.use(express.static(path.join(__dirname, "..", "build")));
+app.use(express.static(path.join(__dirname, ".", "build")));
 
 // Handle React routing
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "build", "index.html"));
+  res.sendFile(path.join(__dirname, ".", "build", "index.html"));
 });
 
 app.listen(PORT, () => {

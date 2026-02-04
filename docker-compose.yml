@@ -2,31 +2,35 @@ version: "3.9"
 
 services:
   web-dev:
-    image: react-personal-website
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: development
+    image: react-personal-website:dev
     ports:
       - "8080:8080"
     environment:
-      - PORT=8080
-      - NODE_ENV=development
+      PORT: 8080
+      NODE_ENV: development
+      FIREBASE_API_KEY: ${FIREBASE_API_KEY}
+      FIREBASE_AUTH_DOMAIN: ${FIREBASE_AUTH_DOMAIN}
+      FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
     command: npm run start
 
   web-prod:
     build:
       context: .
-      dockerfile: dockerfile.prod
-    image: react-personal-website:prod
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: production
+    image: react-personal-website:latest
     ports:
       - "8080:8080"
     environment:
-      - PORT=8080
-      - NODE_ENV=production
-    command: node server/server.js
-
-  web-dev-prod:
-    image: react-personal-website
-    ports:
-      - "8080:8080"
-    environment:
-      - PORT=8080
-      - NODE_ENV=production
+      PORT: 8080
+      NODE_ENV: production
+      FIREBASE_API_KEY: ${FIREBASE_API_KEY}
+      FIREBASE_AUTH_DOMAIN: ${FIREBASE_AUTH_DOMAIN}
+      FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
     command: npm run start
