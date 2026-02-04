@@ -6,27 +6,40 @@ on:
       - master # or main
 
 jobs:
-  # 1️⃣ Build & push Docker image
   build-and-push:
     runs-on: ubuntu-latest
     steps:
+      # 1️⃣ Checkout code
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2️⃣ Authenticate to GCP
       - name: Authenticate to GCP
         uses: google-github-actions/auth@v1
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
 
+      # 3️⃣ Set up gcloud CLI
       - name: Set up gcloud CLI
         uses: google-github-actions/setup-gcloud@v2
         with:
           project_id: alien-craft-484704-u4
           version: latest
 
+      # 4️⃣ Configure Docker to use GCP Artifact Registry
       - name: Configure Docker for Artifact Registry
         run: gcloud auth configure-docker asia-southeast1-docker.pkg.dev --quiet
 
+      # 5️⃣ Cache Node modules for faster npm installs
+      - name: Cache Node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 6️⃣ Build and push Docker image with caching
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
@@ -34,26 +47,27 @@ jobs:
           file: ./dockerfile
           push: true
           tags: asia-southeast1-docker.pkg.dev/alien-craft-484704-u4/personal-react-website/personal-react-website:latest
+          cache-from: type=registry,ref=asia-southeast1-docker.pkg.dev/alien-craft-484704-u4/personal-react-website/personal-react-website:latest
+          cache-to: type=inline
           build-args: |
-            NODE_ENV=production
-            FIREBASE_API_KEY=${{ secrets.FIREBASE_API_KEY }}
-            FIREBASE_AUTH_DOMAIN=${{ secrets.FIREBASE_AUTH_DOMAIN }}
-            FIREBASE_PROJECT_ID=${{ secrets.FIREBASE_PROJECT_ID }}
+            NODE_ENV: production
 
-  # 2️⃣ Deploy to Cloud Run
   deploy:
     runs-on: ubuntu-latest
     needs: build-and-push
     steps:
+      # 1️⃣ Checkout code (optional, but standard)
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2️⃣ Authenticate to GCP for deployment
       - name: Authenticate to GCP
         uses: google-github-actions/auth@v1
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
-          create_credentials_file: true # required for gcloud CLI
+          create_credentials_file: true
 
+      # 3️⃣ Deploy to Cloud Run with Firebase secrets passed at runtime
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy react-personal-website \
@@ -61,4 +75,5 @@ jobs:
             --platform managed \
             --region asia-southeast1 \
             --allow-unauthenticated \
+            --update-env-vars FIREBASE_API_KEY=${{ secrets.FIREBASE_API_KEY }},FIREBASE_AUTH_DOMAIN=${{ secrets.FIREBASE_AUTH_DOMAIN }},FIREBASE_PROJECT_ID=${{ secrets.FIREBASE_PROJECT_ID }} \
             --quiet

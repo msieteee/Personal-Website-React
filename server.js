@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 import { schema } from "./server/schema.js";
 
 if (process.env.NODE_ENV !== "production") {
-  import("dotenv").then((dotenv) => dotenv.config());
+  await import("dotenv").then((dotenv) => dotenv.config());
 }
 
 const __filename = fileURLToPath(import.meta.url);
