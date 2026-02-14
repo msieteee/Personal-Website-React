@@ -1,18 +1,20 @@
+"use client";
+
 import { ContentLimiter } from "@/components/ContentLimiter";
 import PortfolioCard from "@/components/PortfolioCard";
 import SectionHeader from "@/components/SectionHeader";
 import { HomeContext } from "@/context/HomeContext";
-import { useContext } from "react";
-import styled from "styled-components";
 import {
   AlignItems,
   Display,
   FlexDirection,
   JustifyContent,
   JustifyItems,
-} from "../../lib/common/cssenums";
-import { SECTION_TEXT } from "../../lib/common/enum";
-import { ALABASTER, STONE_GRAY } from "../../lib/common/styles";
+} from "@/lib/common/cssenums";
+import { SECTION_TEXT } from "@/lib/common/enum";
+import { ALABASTER, STONE_GRAY } from "@/lib/common/styles";
+import { useContext } from "react";
+import styled from "styled-components";
 
 const PortfolioWrapper = styled.section({
   height: "100%",

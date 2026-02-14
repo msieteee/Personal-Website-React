@@ -1,6 +1,3 @@
-// components/ClientProviders.tsx
-"use client";
-
 import { ReactNode } from "react";
 import { HomeProvider } from "./HomeProvider";
 

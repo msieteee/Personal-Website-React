@@ -1,11 +1,11 @@
 import { GlobalStyle } from "@/components/GlobalStyle";
 import ClientProvider from "@/context/ClientProvider";
+import StyledComponentsRegistry from "@/lib/StyledComponentRegistry";
 
 export const metadata = {
   title: "Miguel Sietereales | Software Developer",
   description:
     "Miguel Sietereales – Software developer with 6+ years of experience in full-stack development. Explore my portfolio, projects, and creative coding work.",
-  viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon" },
@@ -35,10 +35,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body style={{ height: "100%", width: "100%", margin: 0, padding: 0 }}>
-        <ClientProvider>
-          <GlobalStyle />
-          {children}
-        </ClientProvider>
+        <StyledComponentsRegistry>
+          <ClientProvider>
+            <GlobalStyle />
+            {children}
+          </ClientProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

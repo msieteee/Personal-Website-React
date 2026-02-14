@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import {
   AlignItems,
   Cursor,
@@ -7,8 +6,9 @@ import {
   Margin,
   Position,
   TextDecoration,
-} from "../lib/common/cssenums";
-import { MATTE_BLACK } from "../lib/common/styles";
+} from "@/lib/common/cssenums";
+import { MATTE_BLACK } from "@/lib/common/styles";
+import styled from "styled-components";
 
 interface Header {
   label: string;

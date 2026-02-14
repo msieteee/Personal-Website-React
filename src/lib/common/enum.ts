@@ -1,7 +1,3 @@
-import BBDO from "@/assets/images/bbdo.png";
-import Infor from "@/assets/images/infor.png";
-import Oracle from "@/assets/images/oracle-netsuite.png";
-
 import AGPCI from "@/assets/images/portfolio/agpci.jpg";
 import Crabtech from "@/assets/images/portfolio/crabtech.jpg";
 import GreenGuide from "@/assets/images/portfolio/greenguide.jpg";
@@ -49,7 +45,7 @@ export const SECTION_TEXT = {
 
 export const JOB_EXPERIENCE = [
   {
-    IMAGE: Oracle,
+    IMAGE: "/images/oracle-netsuite.png",
     ALT: "Oracle Logo",
     TITLE: "Senior Software Engineer I",
     COMPANY: "Oracle NetSuite",
@@ -65,7 +61,7 @@ export const JOB_EXPERIENCE = [
       "Built responsive, data-driven web applications using Test-Driven Development to ensure high-quality, user-centric experiences, while bridging front-end development and UX design through Figma prototypes to accelerate design-to-development workflows and improve UI consistency.",
   },
   {
-    IMAGE: Infor,
+    IMAGE: "/images/infor.png",
     ALT: "Infor Logo",
     TITLE: "Software Engineer",
     COMPANY: "Infor PSSC Inc.",
@@ -81,7 +77,7 @@ export const JOB_EXPERIENCE = [
       "Developed low- to mid-priority enhancements for Infor M3 ERP to improve user experience, resolved internal and external maintenance issues to ensure system reliability, and earned promotion to Mid-level Software Engineer within 18 months.",
   },
   {
-    IMAGE: BBDO,
+    IMAGE: "/images/bbdo.png",
     ALT: "BBDO Guerrero Logo",
     TITLE: "Digital Trainee",
     COMPANY: "BBDO Guerrero",

@@ -1,5 +1,5 @@
+import { Display } from "@/lib/common/cssenums";
 import styled, { CSSObject } from "styled-components";
-import { Display } from "../lib/common/cssenums";
 
 type HeaderTextProps = {
   headerText: string;
@@ -44,7 +44,11 @@ const HeaderEmoji = styled.span({});
 const HeaderText = ({ headerText, subHeaders }: HeaderTextProps) => {
   const SubHeaders = subHeaders ? (
     subHeaders.map((subHeader, index) => {
-      return <SubHeaderLabel key={index}>{subHeader}</SubHeaderLabel>;
+      return (
+        <SubHeaderLabel key={`${subHeader}-${index}`}>
+          {subHeader}
+        </SubHeaderLabel>
+      );
     })
   ) : (
     <></>

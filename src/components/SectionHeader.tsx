@@ -1,5 +1,5 @@
+import { MATTE_BLACK } from "@/lib/common/styles";
 import styled, { CSSObject } from "styled-components";
-import { MATTE_BLACK } from "../lib/common/styles";
 
 type HeaderTextProps = {
   headerText: string;

@@ -44,7 +44,7 @@ const Homepage = () => {
     { label: "contact", href: "#contact" },
     {
       label: "download CV",
-      href: "",
+      href: "/resume.pdf",
       downloadLink: "Sietereales-Miguel-Resume.pdf",
     },
   ];

@@ -1,6 +1,6 @@
+import { Display, JustifyContent } from "@/lib/common/cssenums";
+import { hexOpacity, TAUPE } from "@/lib/common/styles";
 import styled from "styled-components";
-import { Display, JustifyContent } from "../lib/common/cssenums";
-import { hexOpacity, TAUPE } from "../lib/common/styles";
 
 type HeaderImageProps = {
   imageUrl: string;

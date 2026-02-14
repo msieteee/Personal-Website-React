@@ -1,6 +1,5 @@
 import { ContentLimiter } from "@/components/ContentLimiter";
 import SectionHeader from "@/components/SectionHeader";
-import styled from "styled-components";
 import {
   AlignItems,
   Display,
@@ -8,9 +7,10 @@ import {
   Position,
   TextAlign,
   TextDecoration,
-} from "../../lib/common/cssenums";
-import { SECTION_TEXT } from "../../lib/common/enum";
-import { MATTE_BLACK, TAUPE, WHITE } from "../../lib/common/styles";
+} from "@/lib/common/cssenums";
+import { SECTION_TEXT } from "@/lib/common/enum";
+import { MATTE_BLACK, TAUPE, WHITE } from "@/lib/common/styles";
+import styled from "styled-components";
 
 const ContactWrapper = styled.section({
   height: "100%",
