@@ -1,3 +1,6 @@
+"use client";
+
+import "@/assets/fonts/fonts.css";
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`

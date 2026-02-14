@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import LinkIcon from "../assets/svg/link";
+import LinkIcon from "@/assets/svg/link";
 import {
   AlignContent,
   BackgroundPosition,
@@ -9,8 +8,9 @@ import {
   FlexDirection,
   Overflow,
   Position,
-} from "../common/cssenums";
-import { hexOpacity, MATTE_BLACK, WHITE } from "../common/styles";
+} from "@/lib/common/cssenums";
+import { hexOpacity, MATTE_BLACK, WHITE } from "@/lib/common/styles";
+import styled from "styled-components";
 
 type PortfolioCardProps = {
   title: string;

@@ -1,18 +1,20 @@
-import { useContext } from "react";
-import styled from "styled-components";
+"use client";
+
+import { ContentLimiter } from "@/components/ContentLimiter";
+import PortfolioCard from "@/components/PortfolioCard";
+import SectionHeader from "@/components/SectionHeader";
+import { HomeContext } from "@/context/HomeContext";
 import {
   AlignItems,
   Display,
   FlexDirection,
   JustifyContent,
   JustifyItems,
-} from "../common/cssenums";
-import { SECTION_TEXT } from "../common/enum";
-import { ALABASTER, STONE_GRAY } from "../common/styles";
-import { ContentLimiter } from "../components/ContentLimiter";
-import PortfolioCard from "../components/PortfolioCard";
-import SectionHeader from "../components/SectionHeader";
-import { HomeContext } from "../context/HomeContext";
+} from "@/lib/common/cssenums";
+import { SECTION_TEXT } from "@/lib/common/enum";
+import { ALABASTER, STONE_GRAY } from "@/lib/common/styles";
+import { useContext } from "react";
+import styled from "styled-components";
 
 const PortfolioWrapper = styled.section({
   height: "100%",
@@ -57,18 +59,19 @@ const Portfolio = () => {
         />
       </ContentLimiter>
       <WorkPortfolioWrapper>
-        {portfolioData.map((project) => {
-          return (
-            <PortfolioCard
-              key={project.name}
-              title={project.name}
-              accentColor={STONE_GRAY}
-              imageUrl={project.image}
-              description={project.description}
-              href={project.url}
-            />
-          );
-        })}
+        {portfolioData &&
+          portfolioData.map((project) => {
+            return (
+              <PortfolioCard
+                key={project.name}
+                title={project.name}
+                accentColor={STONE_GRAY}
+                imageUrl={project.image}
+                description={project.description}
+                href={project.url}
+              />
+            );
+          })}
       </WorkPortfolioWrapper>
     </PortfolioWrapper>
   );

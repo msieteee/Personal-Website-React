@@ -1,11 +1,11 @@
+"use client";
+
+import NavigationBar from "@/components/NavigationBar";
+import About from "@/components/sections/About";
+import Contact from "@/components/sections/Contact";
+import Experience from "@/components/sections/Experience";
+import Portfolio from "@/components/sections/Portfolio";
 import styled from "styled-components";
-import "../assets/fonts/fonts.css";
-import Resume from "../assets/resume.pdf";
-import NavigationBar from "../components/NavigationBar";
-import About from "../sections/About";
-import Contact from "../sections/Contact";
-import Experience from "../sections/Experience";
-import Portfolio from "../sections/Portfolio";
 
 const HomePage = styled.div({
   height: "100%",
@@ -44,7 +44,7 @@ const Homepage = () => {
     { label: "contact", href: "#contact" },
     {
       label: "download CV",
-      href: Resume,
+      href: "/resume.pdf",
       downloadLink: "Sietereales-Miguel-Resume.pdf",
     },
   ];

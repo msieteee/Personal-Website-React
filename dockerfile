@@ -1,4 +1,4 @@
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -8,23 +8,23 @@ RUN npm install
 
 COPY . .
 
-ARG NODE_ENV=development
-ENV NODE_ENV=$NODE_ENV
-
 RUN npm run build
 
-FROM node:18-alpine
+FROM node:20-alpine AS runner
 
 WORKDIR /app
 
-COPY --from=builder /app/server.js ./server.js
-COPY --from=builder /app/server ./server
-COPY --from=builder /app/build ./build
-COPY --from=builder /app/config ./config
-COPY package*.json ./
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/app ./app   
+COPY --from=builder /app/src ./src   
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/tsconfig.json ./tsconfig.json
 
 RUN npm install --production
 
+ENV PORT=8080
 EXPOSE 8080
 
-CMD ["node", "server.js"]
+CMD ["npm", "run", "start"]

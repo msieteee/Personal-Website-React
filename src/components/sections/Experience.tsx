@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import { ContentLimiter } from "@/components/ContentLimiter";
+import ExperienceGroup from "@/components/ExperienceGroup";
+import SectionHeader from "@/components/SectionHeader";
 import {
   AlignItems,
   Display,
   FlexDirection,
   FlexWrap,
-} from "../common/cssenums";
-import { JOB_EXPERIENCE, SECTION_TEXT } from "../common/enum";
-import { ALMOND, STONE_GRAY } from "../common/styles";
-import { ContentLimiter } from "../components/ContentLimiter";
-import ExperienceGroup from "../components/ExperienceGroup";
-import SectionHeader from "../components/SectionHeader";
+} from "@/lib/common/cssenums";
+import { JOB_EXPERIENCE, SECTION_TEXT } from "@/lib/common/enum";
+import { ALMOND, STONE_GRAY } from "@/lib/common/styles";
+import styled from "styled-components";
 
 const ExperienceWrapper = styled.section({
   height: "100%",

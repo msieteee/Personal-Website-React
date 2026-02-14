@@ -1,3 +1,4 @@
+import { db } from "@/lib/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import {
   GraphQLList,
@@ -7,7 +8,6 @@ import {
   GraphQLString,
 } from "graphql";
 import { GraphQLJSON } from "graphql-type-json";
-import { db } from "./firebase.js";
 
 const FirebaseDataType = new GraphQLObjectType({
   name: "WebsiteData",

@@ -9,14 +9,13 @@ services:
         NODE_ENV: development
     image: react-personal-website:dev
     ports:
-      - "8080:8080"
+      - "3000:3000"
     environment:
-      PORT: 8080
-      NODE_ENV: development
-      FIREBASE_API_KEY: ${FIREBASE_API_KEY}
-      FIREBASE_AUTH_DOMAIN: ${FIREBASE_AUTH_DOMAIN}
-      FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
-    command: npm run start
+      PORT: 3000
+      NEXT_PUBLIC_FIREBASE_API_KEY: ${FIREBASE_API_KEY}
+      NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${FIREBASE_AUTH_DOMAIN}
+      NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
+    command: npm run dev
 
   web-prod:
     build:
@@ -29,8 +28,7 @@ services:
       - "8080:8080"
     environment:
       PORT: 8080
-      NODE_ENV: production
-      FIREBASE_API_KEY: ${FIREBASE_API_KEY}
-      FIREBASE_AUTH_DOMAIN: ${FIREBASE_AUTH_DOMAIN}
-      FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
+      NEXT_PUBLIC_FIREBASE_API_KEY: ${FIREBASE_API_KEY}
+      NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${FIREBASE_AUTH_DOMAIN}
+      NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
     command: npm run start

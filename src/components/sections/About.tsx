@@ -1,16 +1,15 @@
-import styled from "styled-components";
-import AboutImage from "../assets/images/miguel-sietereales.jpg";
+import { ContentLimiter } from "@/components/ContentLimiter";
+import HeaderImage from "@/components/HeaderImage";
+import HeaderText from "@/components/HeaderText";
 import {
   Display,
   FlexDirection,
   FlexWrap,
   Margin,
   MarginTop,
-} from "../common/cssenums";
-import { HEADER_TEXT, SUBHEADER_TEXT } from "../common/enum";
-import { ContentLimiter } from "../components/ContentLimiter";
-import HeaderImage from "../components/HeaderImage";
-import HeaderText from "../components/HeaderText";
+} from "@/lib/common/cssenums";
+import { HEADER_TEXT, SUBHEADER_TEXT } from "@/lib/common/enum";
+import styled from "styled-components";
 
 const AboutWrapper = styled.section({
   height: "100%",
@@ -62,7 +61,7 @@ const About = () => {
           subHeaders={SUBHEADER_TEXT}
         ></HeaderText>
         <HeaderImage
-          imageUrl={AboutImage}
+          imageUrl={"/images/miguel-sietereales.jpg"}
           alt={"Miguel looking to the side on Avenue des Champs-Élysées, Paris"}
         />
       </ContentLimiter>
