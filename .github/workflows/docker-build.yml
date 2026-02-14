@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master # or main
+      - convert-next # temporary push
 
 jobs:
   build-and-push:
