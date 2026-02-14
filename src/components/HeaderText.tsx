@@ -1,5 +1,5 @@
 import styled, { CSSObject } from "styled-components";
-import { Display } from "../common/cssenums";
+import { Display } from "../lib/common/cssenums";
 
 type HeaderTextProps = {
   headerText: string;

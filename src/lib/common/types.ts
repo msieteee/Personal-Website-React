@@ -5,11 +5,6 @@
 
 import { CSSObject } from "styled-components";
 
-/**
- * Non-CSS Property Types
- * !!! SORT ALPHABETICALLY !!!
- */
-
 export interface Attributable {
   attributes?: Attribute;
 }

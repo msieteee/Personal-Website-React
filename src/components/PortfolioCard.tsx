@@ -9,8 +9,8 @@ import {
   FlexDirection,
   Overflow,
   Position,
-} from "../common/cssenums";
-import { hexOpacity, MATTE_BLACK, WHITE } from "../common/styles";
+} from "../lib/common/cssenums";
+import { hexOpacity, MATTE_BLACK, WHITE } from "../lib/common/styles";
 
 type PortfolioCardProps = {
   title: string;

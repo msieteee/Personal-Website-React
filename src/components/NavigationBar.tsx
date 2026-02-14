@@ -7,8 +7,8 @@ import {
   Margin,
   Position,
   TextDecoration,
-} from "../common/cssenums";
-import { MATTE_BLACK } from "../common/styles";
+} from "../lib/common/cssenums";
+import { MATTE_BLACK } from "../lib/common/styles";
 
 interface Header {
   label: string;
@@ -17,7 +17,7 @@ interface Header {
 }
 
 type NavigationBarProps = {
-  tabs?: Header[];
+  tabs: Header[];
 };
 
 const HeaderContainer = styled.nav({

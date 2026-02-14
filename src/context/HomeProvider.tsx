@@ -1,11 +1,11 @@
 import { ReactNode, useEffect, useMemo, useState } from "react";
+import { HomeContext } from "../context/HomeContext";
 import {
   fetchGraphql,
   sortEntriesByDate,
   transformPortfolioData,
-} from "../common/common";
-import { FLAMELINK_SCHEMA } from "../common/enum";
-import { HomeContext } from "./HomeContext";
+} from "../lib/common/common";
+import { FLAMELINK_SCHEMA } from "../lib/common/enum";
 
 export const HomeProvider = ({ children }: { children: ReactNode }) => {
   const [portfolioData, setPortfolioData] = useState({});

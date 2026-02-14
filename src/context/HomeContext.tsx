@@ -1,4 +1,3 @@
-// src/context/UserContext.tsx
 import { createContext } from "react";
 
 export type PortfolioDataType = {
@@ -12,5 +11,4 @@ export type HomeContextType = {
   portfolioData?: PortfolioDataType[];
 };
 
-// Create Context
 export const HomeContext = createContext<HomeContextType>({});

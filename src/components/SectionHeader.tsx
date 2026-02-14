@@ -1,5 +1,5 @@
 import styled, { CSSObject } from "styled-components";
-import { MATTE_BLACK } from "../common/styles";
+import { MATTE_BLACK } from "../lib/common/styles";
 
 type HeaderTextProps = {
   headerText: string;
@@ -18,7 +18,7 @@ const SectionHeaderWrapper = styled.div(
       width: "100%",
       ...styles,
     };
-  }
+  },
 );
 
 const HeaderLabel = styled.h1({

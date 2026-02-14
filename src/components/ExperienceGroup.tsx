@@ -1,6 +1,6 @@
 import styled, { CSSObject } from "styled-components";
-import { Display, FlexWrap } from "../common/cssenums";
-import { GREIGE, STONE_GRAY } from "../common/styles";
+import { Display, FlexWrap } from "../lib/common/cssenums";
+import { GREIGE, STONE_GRAY } from "../lib/common/styles";
 
 type ExperienceGroupProps = {
   imageUrl?: string;
