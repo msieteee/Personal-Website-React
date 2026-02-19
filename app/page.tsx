@@ -8,6 +8,8 @@ import {
 import { FLAMELINK_SCHEMA } from "@/lib/common/enum";
 import Homepage from "./Homepage";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page() {
   const query = `
     query ($schemaName: String!) {
