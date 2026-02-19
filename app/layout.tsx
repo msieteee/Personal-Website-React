@@ -4,6 +4,18 @@ export const metadata = {
   title: "Miguel Sietereales | Software Developer",
   description:
     "Miguel Sietereales – Software developer with 6+ years of experience in full-stack development. Explore my portfolio, projects, and creative coding work.",
+  keywords: [
+    "Sietereales Developer",
+    "Miguel Sietereales",
+    "Miguel Alphonzo Sietereales",
+    "Oracle NetSuite",
+    "Software Developer",
+    "Full-Stack Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "Portfolio",
+    "Projects",
+  ],
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon" },
