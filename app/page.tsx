@@ -8,8 +8,6 @@ import {
 import { FLAMELINK_SCHEMA } from "@/lib/common/enum";
 import Homepage from "./Homepage";
 
-export const dynamic = "force-dynamic";
-
 export default async function Page() {
   const query = `
     query ($schemaName: String!) {
@@ -20,18 +18,23 @@ export default async function Page() {
     }
   `;
 
-  const variables = { schemaName: FLAMELINK_SCHEMA.PORTFOLIO };
-  const result = await fetchGraphql(query, variables);
+  let transformedPortfolioData = [];
+  try {
+    const variables = { schemaName: FLAMELINK_SCHEMA.PORTFOLIO };
+    const result = await fetchGraphql(query, variables);
+    const entries = result.data.entriesBySchema ?? [];
 
-  const entries = result.data.entriesBySchema ?? [];
+    const flattenResult = Object.values(entries).map((d: any) => ({
+      id: d.id,
+      ...d.data,
+    }));
 
-  const flattenResult = Object.values(entries).map((d: any) => ({
-    id: d.id,
-    ...d.data,
-  }));
+    const sortedData = sortEntriesByDate(flattenResult, "dateStarted");
 
-  const sortedData = sortEntriesByDate(flattenResult, "dateStarted");
-  const transformedPortfolioData = transformPortfolioData(sortedData);
+    transformedPortfolioData = transformPortfolioData(sortedData);
+  } catch (err) {
+    console.warn("Skipping GraphQL fetch during build", err);
+  }
 
   return (
     <>

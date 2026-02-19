@@ -1,14 +1,14 @@
 "use client";
 
 import { ReactNode } from "react";
-import { HomeContext } from "../context/HomeContext";
+import { HomeContext, PortfolioDataType } from "../context/HomeContext";
 
 export const HomeProvider = ({
   children,
   portfolioData,
 }: {
   children: ReactNode;
-  portfolioData: [];
+  portfolioData: PortfolioDataType[];
 }) => {
   return (
     <HomeContext.Provider
