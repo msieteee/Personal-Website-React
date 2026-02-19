@@ -1,7 +1,7 @@
 import { GlobalStyle } from "@/components/GlobalStyle";
 import { HomeProvider } from "@/context/HomeProvider";
 import {
-  fetchGraphql,
+  fetchDirectGraphql,
   sortEntriesByDate,
   transformPortfolioData,
 } from "@/lib/common/common";
@@ -19,19 +19,20 @@ export default async function Page() {
   `;
 
   let transformedPortfolioData = [];
+
   try {
     const variables = { schemaName: FLAMELINK_SCHEMA.PORTFOLIO };
-    const result = await fetchGraphql(query, variables);
-    const entries = result.data.entriesBySchema ?? [];
+    const result = await fetchDirectGraphql(query, variables);
 
-    const flattenResult = Object.values(entries).map((d: any) => ({
-      id: d.id,
-      ...d.data,
-    }));
+    if (result && result.data) {
+      const flattenResult = Object.values(result.data.entriesBySchema).map(
+        (d: any) => ({ id: d.id, ...d.data }),
+      );
 
-    const sortedData = sortEntriesByDate(flattenResult, "dateStarted");
+      const sortedData = sortEntriesByDate(flattenResult, "dateStarted");
 
-    transformedPortfolioData = transformPortfolioData(sortedData);
+      transformedPortfolioData = transformPortfolioData(sortedData);
+    }
   } catch (err) {
     console.warn("Skipping GraphQL fetch during build", err);
   }

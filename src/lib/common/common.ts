@@ -1,3 +1,6 @@
+import { graphql } from "graphql";
+import { schema } from "../schema";
+
 export const formatDateRange = (
   start: Date | string | number,
   end: Date | string | number,
@@ -56,4 +59,14 @@ export const fetchGraphql = async (query, variables) => {
   });
 
   return response.json();
+};
+
+export const fetchDirectGraphql = async (query, variables) => {
+  const result = await graphql({
+    schema,
+    source: query,
+    variableValues: variables,
+  });
+
+  return result;
 };
