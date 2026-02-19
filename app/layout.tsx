@@ -1,5 +1,3 @@
-import { GlobalStyle } from "@/components/GlobalStyle";
-import ClientProvider from "@/context/ClientProvider";
 import StyledComponentsRegistry from "@/lib/StyledComponentRegistry";
 
 export const metadata = {
@@ -35,12 +33,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body style={{ height: "100%", width: "100%", margin: 0, padding: 0 }}>
-        <StyledComponentsRegistry>
-          <ClientProvider>
-            <GlobalStyle />
-            {children}
-          </ClientProvider>
-        </StyledComponentsRegistry>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
   );

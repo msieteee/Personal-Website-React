@@ -22,5 +22,6 @@ build/
 
 # Environment File
 .env
+.env.local
 .next/
 

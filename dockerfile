@@ -21,6 +21,7 @@ COPY --from=builder /app/app ./app
 COPY --from=builder /app/src ./src   
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/tsconfig.json ./tsconfig.json
+COPY --from=builder /app/next.config.js ./next.config.js
 
 RUN npm install --production
 
